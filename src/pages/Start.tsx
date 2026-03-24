@@ -1,5 +1,10 @@
+import Header from "../components/header.tsx";
+
 export default function Start() {
     return (
-        <h1>start page</h1>
+        <>
+            <Header />
+            <h1>start page</h1>
+        </>
     )
 }

@@ -1,5 +1,10 @@
+import Header from "../components/header.tsx";
+
 export default function Results() {
     return (
-        <h1>results page</h1>
+        <>
+            <Header />
+            <h1>results page</h1>
+        </>
     )
 }
