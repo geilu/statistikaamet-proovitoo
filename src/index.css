@@ -2,4 +2,5 @@
 
 #root {
     font-family: 'Roboto', serif;
+    --light-pattern: radial-gradient( circle at 1px 1px, #8E8E8E 1px, #fff 0 );
 }
