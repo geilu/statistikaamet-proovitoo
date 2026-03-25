@@ -1,8 +1,9 @@
 import questions from "../data/questions.json";
 import responses from "../data/responses.json";
 import SummaryTable from "./summaryTable.tsx";
+import type {Answer} from "../data/answer.ts";
 
-export default function QuizSummary({ answers, score }: Readonly<{ answers: string[], score: number }>) {
+export default function QuizSummary({ answers, score }: Readonly<{ answers: Answer[], score: number }>) {
     let personalMessage: string = "";
 
     const scoreThreshold: number = score / questions.length;

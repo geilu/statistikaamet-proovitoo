@@ -1,8 +1,9 @@
 import questions from '../data/questions.json';
 import {type Dispatch, type SetStateAction, useState} from "react";
+import type {Answer} from "../data/answer.ts";
 
 export default function QuestionCard({ setAnswers, setScore, setDone }: Readonly<{
-                                                                                setAnswers: Dispatch<SetStateAction<string[]>>,
+                                                                                setAnswers: Dispatch<SetStateAction<Answer[]>>,
                                                                                 setScore: Dispatch<SetStateAction<number>>,
                                                                                 setDone: Dispatch<SetStateAction<boolean>>
                                                                                 }>) {
@@ -35,7 +36,11 @@ export default function QuestionCard({ setAnswers, setScore, setDone }: Readonly
         } else {
             setCorrectAnswer(false);
         }
-        setAnswers(prev => [...prev, selected]);
+        setAnswers(prev => [...prev, {
+            question: currentQuestion.question,
+            selected: selected,
+            correct: currentQuestion.answer
+        }]);
     }
 
     const handleContinue = () => {

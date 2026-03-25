@@ -1,6 +1,6 @@
-import questions from "../data/questions.json"
+import type {Answer} from "../data/answer.ts"
 
-export default function SummaryTable({ answers, }: {answers: string[]}) {
+export default function SummaryTable({ answers, }: Readonly<{ answers: Answer[] }>) {
     return (
         <div>
             <table>
@@ -12,10 +12,10 @@ export default function SummaryTable({ answers, }: {answers: string[]}) {
                 </tr>
                 {answers.map((answer, i) =>
                     <tr key={i}>
-                        <td>{questions[i].question}</td>
-                        <td>{answer}</td>
-                        <td>{questions[i].answer}</td>
-                        <td>{answer.toLowerCase() === questions[i].answer.toLowerCase() ? "Õige" : "Vale"}</td>
+                        <td>{answer.question}</td>
+                        <td>{answer.selected}</td>
+                        <td>{answer.correct}</td>
+                        <td>{answer.selected.toLowerCase() === answer.correct.toLowerCase() ? "Õige" : "Vale"}</td>
                     </tr>
                 )}
             </table>
