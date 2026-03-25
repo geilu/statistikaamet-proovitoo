@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <div className="bg-black w-full h-[2.5em] flex flex-row justify-between items-center px-[3.5em] text-white">
             <div id="header-left" className="w-full">
-                <h1 className="font-bold">Proovitöö</h1>
+                <a href="/" className="font-bold">Proovitöö</a>
             </div>
             <div id="header-center" className="w-full flex flex-row justify-center gap-[2em]">
                 <a className={aStyle}

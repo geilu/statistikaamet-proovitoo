@@ -17,15 +17,14 @@ export default function Start() {
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
-                    <a className="my-[1em] bg-black text-white border-black border-[0.1em] p-[0.7em]
-                     hover:bg-white hover:text-black"
+                    <a className="btn"
                     href="/quiz">Alusta viktoriiniga</a>
                 </div>
                 <div>
-                <div id="quiz-image" className="mr-[2em] relative">
+                <div id="quiz-image-container" className="mr-[2em] relative">
                     <img src={TakingAQuiz} alt="person taking a quiz" width="2500"/>
                 </div>
-                    <p id="label-large">Foto allikas: https://pixabay.com/photos/omr-sheet-fill-paper-hand-young-3723132/</p>
+                    <p className="label-large">Foto allikas: https://pixabay.com/photos/omr-sheet-fill-paper-hand-young-3723132/</p>
                 </div>
             </div>
         </>
