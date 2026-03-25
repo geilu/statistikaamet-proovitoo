@@ -29,7 +29,7 @@ export default function QuestionCard({ setAnswers, setScore, setDone }: Readonly
             setError("");
         }
         setAnswered(true);
-        if (selected === currentQuestion.answer) {
+        if (selected.toLowerCase() === currentQuestion.answer.toLowerCase()) {
             setScore(prev => prev + 1);
             setCorrectAnswer(true);
         } else {
@@ -60,7 +60,7 @@ export default function QuestionCard({ setAnswers, setScore, setDone }: Readonly
                     <input id={`option-${o}`}
                            type="radio"
                            name="question"
-                           checked={selected === o}
+                           checked={selected.toLowerCase() === o.toLowerCase()}
                            onChange={() => setSelected(o)}
                            value={o} />
                     {o}</label>
