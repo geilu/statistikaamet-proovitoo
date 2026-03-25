@@ -20,11 +20,12 @@ export default function QuizSummary({ answers, score }: Readonly<{ answers: Answ
     }
 
     return (
-        <div>
+        <div className="m-[2em]">
             <p>valmis! skoor: {score}/{questions.length}</p>
             <p>kokkuvõte:</p>
             <SummaryTable answers={answers} />
             <p>{personalMessage}</p>
+            <a className="btn absolute mt-[1em]" href="/">Tagasi algusesse</a>
         </div>
     )
 }
