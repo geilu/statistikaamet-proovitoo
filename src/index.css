@@ -2,5 +2,23 @@
 
 #root {
     font-family: 'Roboto', serif;
-    --light-pattern: radial-gradient( circle at 1px 1px, #8E8E8E 1px, #fff 0 );
+    --light-pattern: radial-gradient( circle at 1px 1px, #8E8E8E 1px, transparent 0 );
+    --dark-pattern: radial-gradient( circle at 1px 1px, black 1px, transparent 0 );
+}
+
+#quiz-image::before {
+    content: "";
+    top: 0.2em;
+    left: 0.8em;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-image: var(--dark-pattern);
+    background-size: 2em 2em;
+}
+
+#label-large {
+    font-size: 14px;
+    line-height: 20px;
+    color: #565656;
 }
