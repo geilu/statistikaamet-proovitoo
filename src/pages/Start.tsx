@@ -10,10 +10,10 @@ export default function Start() {
     const { t } = useTranslation();
 
     return (
-        <>
+        <div className="bg-white">
             <Header />
             <Navbar />
-            <div className="m-[2em] mt-[4em] min-h-[70vh] flex flex-col gap-6 sm:flex-row">
+            <div className="m-[2em] mt-[4em] min-h-[70vh] flex flex-col gap-6 md:justify-between md:flex-row">
                 <div className="max-w-[45em]">
                     <h1 className="headline-large">{t('headline')}</h1>
                     <p className="body-medium text-balance mt-[1.5em]">
@@ -23,13 +23,13 @@ export default function Start() {
                     href="/quiz">{t("start")}</a>
                 </div>
                 <div>
-                <div id="quiz-image-container" className="mr-[2em] relative">
+                <div id="quiz-image-container" className="mr-[2em] relative max-w-[45em]">
                     <img src={TakingAQuiz} alt="person taking a quiz" width="2500"/>
                 </div>
-                    <p className="label-large">{t("source")}: https://pixabay.com/photos/omr-sheet-fill-paper-hand-young-3723132/</p>
+                    <p className="label-large">{t("source")}: Pixabay</p>
                 </div>
             </div>
             <Footer />
-        </>
+        </div>
     )
 }

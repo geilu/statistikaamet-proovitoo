@@ -77,7 +77,7 @@ export default function QuestionCard({ setAnswers, setScore, setDone, score }: R
             <h1 className="headline-large">{currentQuestion.question}</h1>
             {currentQuestion.options.map((o, i) =>
                 <div key={i} className="my-[1.5em]">
-                    <label className="body-medium flex flex-row">
+                    <label className={`text-(--primary-dark-grey) flex flex-row ${answered && selected !== i.toString() ? "text-gray-300" : ""}`}>
                         <input id={`option-${i}`}
                                type="radio"
                                name="question"
@@ -88,11 +88,11 @@ export default function QuestionCard({ setAnswers, setScore, setDone, score }: R
                                 disabled={answered}
                                 />
                                 {/* radio buttoni stiil */}
-                                <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mr-[1em] shrink-0 ${selected.toLowerCase() === o.toLowerCase()
-                                    ? "border-black"
-                                    : "border-gray-400"}`}>
-                                    {selected === i.toString() &&
-                                        <div className="w-3 h-3 rounded-full bg-black shrink-0" /> }
+                        <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mr-[1em] shrink-0 ${
+                            selected === i.toString()
+                                ? "border-black"
+                                : answered ? "border-gray-200" : "border-gray-400"
+                        }`}>
                                 </div>
                         {o}
                     </label>

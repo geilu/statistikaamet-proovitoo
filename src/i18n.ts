@@ -38,7 +38,10 @@ i18n
                     enteredCorrectAnswer: "Tubli! Valisid õige vastuse.",
                     enteredWrongAnswer: "Kahjuks see pole õige vastus!",
                     correctShort: "Õige",
-                    wrongShort: "Vale"
+                    wrongShort: "Vale",
+                    sitemap: "Sisukaart",
+                    cookies: "Küpsiste sätted",
+                    privacypolicy: "Andmekaitse"
                 }
             },
             en: {
@@ -68,10 +71,13 @@ i18n
                     enter: "Enter",
                     continue: "Continue",
                     currentScore: "Current score",
-                    enteredCorrectAnswer: "Correct!",
-                    enteredWrongAnswer: "Incorrect!",
+                    enteredCorrectAnswer: "Correct answer!",
+                    enteredWrongAnswer: "Incorrect answer!",
                     correctShort: "Correct",
-                    wrongShort: "Incorrect"
+                    wrongShort: "Incorrect",
+                    sitemap: "Sitemap",
+                    cookies: "Cookie settings",
+                    privacypolicy: "Privacy policy"
                 }
             }
         }

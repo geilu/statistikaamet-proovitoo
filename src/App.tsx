@@ -5,7 +5,7 @@ import './index.css'
 
 function App() {
     // eslint-disable-next-line react-hooks/immutability
-    document.body.style.backgroundColor = "white"
+    document.body.style.backgroundColor = "black"
     return (
         <Routes>
             <Route path="/" element={<Start />} />

@@ -13,7 +13,7 @@ export default function Quiz() {
     const [done, setDone] = useState<boolean>(false);
 
     return (
-        <>
+        <div className="bg-white">
             <Header />
             <Navbar />
             <div className="min-h-[80vh]">
@@ -22,6 +22,6 @@ export default function Quiz() {
                 : <QuestionCard setAnswers={setAnswers} setScore={setScore} setDone={setDone} score={score} />} {/* nõue: ükshaaval esitatud küsimused */}
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
