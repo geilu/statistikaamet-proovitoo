@@ -23,7 +23,7 @@ export default function Start() {
                     href="/quiz">{t("start")}</a>
                 </div>
                 <div>
-                <div id="quiz-image-container" className="mr-[2em] relative max-w-[45em]">
+                <div id="quiz-image-container" className="mr-[2em] relative max-w-[45em] min-w-[20em]">
                     <img src={TakingAQuiz} alt="person taking a quiz" width="2500"/>
                 </div>
                     <p className="label-large">{t("source")}: Pixabay</p>

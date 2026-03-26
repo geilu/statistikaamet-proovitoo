@@ -77,7 +77,7 @@ export default function QuestionCard({ setAnswers, setScore, setDone, score }: R
             <h1 className="headline-large">{currentQuestion.question}</h1>
             {currentQuestion.options.map((o, i) =>
                 <div key={i} className="my-[1.5em]">
-                    <label className={`text-(--primary-dark-grey) flex flex-row ${answered && selected !== i.toString() ? "text-gray-300" : ""}`}>
+                    <label className={`text-(--primary-dark-grey) flex flex-row cursor-pointer ${answered && selected !== i.toString() ? "text-gray-300" : ""}`}>
                         <input id={`option-${i}`}
                                type="radio"
                                name="question"
@@ -93,7 +93,9 @@ export default function QuestionCard({ setAnswers, setScore, setDone, score }: R
                                 ? "border-black"
                                 : answered ? "border-gray-200" : "border-gray-400"
                         }`}>
-                                </div>
+                            {selected === i.toString() &&
+                                <div className="w-3 h-3 rounded-full bg-black shrink-0" />}
+                        </div>
                         {o}
                     </label>
                 </div>)}
