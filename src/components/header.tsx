@@ -2,11 +2,12 @@ export default function Header() {
     const aStyle: string = "block hover:bg-white text-white hover:text-black";
 
     return (
-        <div className="bg-black w-full h-[2.5em] flex flex-row justify-between items-center px-[3.5em] text-white">
+        <div className="bg-black w-full h-[2.5em] px-[1em] flex flex-row justify-between items-center sm:px-[3.5em] text-white">
             <div id="header-left" className="w-full">
                 <a href="/" className="font-bold">Proovitöö</a>
             </div>
-            <div id="header-center" className="w-full flex flex-row justify-center gap-[2em]">
+
+            <div id="header-center" className="hidden sm:w-full sm:flex sm:flex-row sm:justify-center sm:gap-[2em]">
                 <a className={aStyle}
                     href="https://et-ee.facebook.com/Statistikaamet" target="_blank" rel="noopener noreferrer">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -46,6 +47,7 @@ export default function Header() {
                     </svg>
                 </a>
             </div>
+
             <div id="header-right" className="w-full flex flex-row justify-end items-center gap-[1.5em]">
                 <a className="font-bold hover:underline text-sm"
                     href="https://www.stat.ee/et/ligipaasetavus" target="_blank" rel="noopener noreferrer">Ligipääsetavus</a>

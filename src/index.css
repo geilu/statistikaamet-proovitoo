@@ -35,6 +35,7 @@
 }
 
 .btn {
+    display: inline-block;
     margin-top: 1em;
     margin-bottom: 1em;
     background-color: var(--primary-color);
@@ -51,7 +52,7 @@
 .headline-large {
     color: var(--primary-color);
     font-size: var(--title-1-size);
-    line-height: var(--title-2-line);
+    line-height: var(--title-1-line);
     font-family: 'Roboto', serif;
     font-weight: 700;
 }

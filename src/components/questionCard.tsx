@@ -52,15 +52,15 @@ export default function QuestionCard({ setAnswers, setScore, setDone }: Readonly
         }
     }
 
-    const enterButton =  <button className="btn mt-[2em]r" onClick={handleEnter}>Sisesta</button>
+    const enterButton =  <button className="btn" onClick={handleEnter}>Sisesta</button>
 
-    const continueButton = <button className="btn mt-[2em]" onClick={handleContinue}>Liigu edasi</button>
+    const continueButton = <button className="btn" onClick={handleContinue}>Liigu edasi</button>
 
     return (
-        <div className="m-[5em]">
+        <div className="ml-[2em] mt-[2em] sm:m-[5em]">
             <h1 className="headline-large">{currentQuestion.question}</h1>
             {currentQuestion.options.map(o =>
-                <div key={o} className="my-[1em]">
+                <div key={o} className="my-[1.5em]">
                     <label className="body-medium flex flex-row">
                         <input id={`option-${o}`}
                                type="radio"
@@ -70,18 +70,18 @@ export default function QuestionCard({ setAnswers, setScore, setDone }: Readonly
                                value={o}
                                className="hidden"/>
                                 {/* radio buttoni stiil */}
-                                <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mr-[1em] ${selected.toLowerCase() === o.toLowerCase()
+                                <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mr-[1em] shrink-0 ${selected.toLowerCase() === o.toLowerCase()
                                     ? "border-black"
                                     : "border-gray-400"}`}>
                                     {selected.toLowerCase() === o.toLowerCase() &&
-                                        <div className="w-3 h-3 rounded-full bg-black" /> }
+                                        <div className="w-3 h-3 rounded-full bg-black shrink-0" /> }
                                 </div>
                         {o}
                     </label>
                 </div>)}
             <p className="text-[var(--error-color)] text-sm">{error}</p>
             {answered ? continueButton : enterButton}
-            <p className={answered ? "visible" : "hidden"}>{correctAnswer ? ("Tubli! Valisid õige vastuse.") : ("Kahjuks see pole õige vastus!")}</p> {/* nõue: kohene tagasiside */}
+            <p className={`${answered ? "visible" : "hidden"} body-small`}>{correctAnswer ? ("Tubli! Valisid õige vastuse.") : ("Kahjuks see pole õige vastus!")}</p> {/* nõue: kohene tagasiside */}
         </div>
     )
 }
