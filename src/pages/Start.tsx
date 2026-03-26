@@ -3,28 +3,30 @@ import Navbar from "../components/navbar.tsx";
 import Footer from "../components/footer.tsx";
 
 import TakingAQuiz from "../assets/taking_a_quiz.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function Start() {
+
+    const { t } = useTranslation();
+
     return (
         <>
             <Header />
             <Navbar />
             <div className="m-[2em] mt-[4em] min-h-[70vh] flex flex-col gap-6 sm:flex-row">
-                <div>
-                    <h1 className="headline-large">Viktoriin</h1>
+                <div className="max-w-[45em]">
+                    <h1 className="headline-large">{t('headline')}</h1>
                     <p className="body-medium text-balance mt-[1.5em]">
-                        Selles viktoriinis ei ole võimalik küsimuste vahel edasi-tagasi liikuda, seega tasub iga vastus enne kinnitamist hoolikalt läbi mõelda.
-                        Küsimused on erinevate teemade kohta, iga vastuse esitamise järel saate kohese tagasiside, kas vastus on õige või vale.
-                        Viktoriini lõpus on näha põhjalikku kokkuvõtet lõpptulemuse, kõikide küsimuste ja Teie poolt antud vastuste kohta. Toredat vastamist! :)
+                        {t("intro")}
                     </p>
                     <a className="btn self-start"
-                    href="/quiz">Alusta viktoriiniga</a>
+                    href="/quiz">{t("start")}</a>
                 </div>
                 <div>
                 <div id="quiz-image-container" className="mr-[2em] relative">
                     <img src={TakingAQuiz} alt="person taking a quiz" width="2500"/>
                 </div>
-                    <p className="label-large">Foto allikas: https://pixabay.com/photos/omr-sheet-fill-paper-hand-young-3723132/</p>
+                    <p className="label-large">{t("source")}: https://pixabay.com/photos/omr-sheet-fill-paper-hand-young-3723132/</p>
                 </div>
             </div>
             <Footer />

@@ -1,6 +1,8 @@
-import questions from '../data/questions.json';
 import {type Dispatch, type SetStateAction, useState} from "react";
 import type {Answer} from "../data/answer.ts";
+import {useTranslation} from "react-i18next";
+import questionsEn from "../data/questions.en.json";
+import questionsEt from "../data/questions.et.json";
 
 export default function QuestionCard({ setAnswers, setScore, setDone, score }: Readonly<{
                                                                                 setAnswers: Dispatch<SetStateAction<Answer[]>>,
@@ -15,32 +17,41 @@ export default function QuestionCard({ setAnswers, setScore, setDone, score }: R
     const [error, setError] = useState<string>("");
     const [index, setIndex] = useState<number>(0);
 
+    const { t, i18n } = useTranslation();
+    const questions = i18n.language === "en" ? questionsEn : questionsEt;
+
     if (questions.length < 3) {
-        return <p>Viktoriinis pole piisavalt küsimusi! Lisa mõni juurde.</p>; // nõue: vähemalt 3 küsimust
+        return <p>{t("notEnoughQuestions")}</p>; // nõue: vähemalt 3 küsimust
     }
 
     const currentQuestion = questions.at(index)
 
-    if (!currentQuestion) return <p>Küsimus ei laadinud. Palun proovi uuesti</p>;
+    if (!currentQuestion) return <p>{t("didntLoadError")}</p>;
 
     const handleEnter = () => {
         if (selected === "") {
-            setError("Proovi valida mingi vastus!");
+            setError(t("chooseOptionError"));
             return;
         } else {
             setError("");
         }
+
+        const selectedIndex = parseInt(selected);
+        const correctIndex = currentQuestion.options.findIndex(
+            o => o.toLowerCase() === currentQuestion.answer.toLowerCase()
+        );
+        const isCorrect = selectedIndex === correctIndex;
+
         setAnswered(true);
-        if (selected.toLowerCase() === currentQuestion.answer.toLowerCase()) {
+        setCorrectAnswer(isCorrect);
+
+        if (isCorrect) {
             setScore(prev => prev + 1);
-            setCorrectAnswer(true);
-        } else {
-            setCorrectAnswer(false);
         }
         setAnswers(prev => [...prev, {
-            question: currentQuestion.question,
-            selected: selected,
-            correct: currentQuestion.answer
+            questionIndex: index,
+            selectedIndex: selectedIndex,
+            correctIndex: correctIndex
         }]);
     }
 
@@ -53,26 +64,26 @@ export default function QuestionCard({ setAnswers, setScore, setDone, score }: R
         }
     }
 
-    const enterButton =  <button className="btn" onClick={handleEnter}>Sisesta</button>
+    const enterButton =  <button className="btn" onClick={handleEnter}>{t("enter")}</button>
 
-    const continueButton = <button className="btn" onClick={handleContinue}>Liigu edasi</button>
+    const continueButton = <button className="btn" onClick={handleContinue}>{t("continue")}</button>
 
     return (
         <div className="flex flex-col justify-between ml-[2em] sm:mx-[5em]">
             <div className="my-[2em]">
-                <p className="mr-[1em] text-right body-medium mt-[0.5em]">Praegune skoor: <b className="body-medium-bold">{score}/{questions.length}</b></p>
+                <p className="mr-[1em] text-right body-medium mt-[0.5em]">{t("currentScore")}: <b className="body-medium-bold">{score}/{questions.length}</b></p>
             </div>
             <div>
             <h1 className="headline-large">{currentQuestion.question}</h1>
-            {currentQuestion.options.map(o =>
-                <div key={o} className="my-[1.5em]">
+            {currentQuestion.options.map((o, i) =>
+                <div key={i} className="my-[1.5em]">
                     <label className="body-medium flex flex-row">
-                        <input id={`option-${o}`}
+                        <input id={`option-${i}`}
                                type="radio"
                                name="question"
-                               checked={selected.toLowerCase() === o.toLowerCase()}
-                               onChange={() => setSelected(o)}
-                               value={o}
+                               checked={selected === i.toString()}
+                               onChange={() => setSelected(i.toString())}
+                               value={i}
                                className="hidden"
                                 disabled={answered}
                                 />
@@ -80,7 +91,7 @@ export default function QuestionCard({ setAnswers, setScore, setDone, score }: R
                                 <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mr-[1em] shrink-0 ${selected.toLowerCase() === o.toLowerCase()
                                     ? "border-black"
                                     : "border-gray-400"}`}>
-                                    {selected.toLowerCase() === o.toLowerCase() &&
+                                    {selected === i.toString() &&
                                         <div className="w-3 h-3 rounded-full bg-black shrink-0" /> }
                                 </div>
                         {o}
@@ -88,7 +99,7 @@ export default function QuestionCard({ setAnswers, setScore, setDone, score }: R
                 </div>)}
             <p className="text-[var(--error-color)] text-sm">{error}</p>
             {answered ? continueButton : enterButton}
-            <p className={`${answered ? "visible" : "hidden"} body-small`}>{correctAnswer ? ("Tubli! Valisid õige vastuse.") : ("Kahjuks see pole õige vastus!")}</p> {/* nõue: kohene tagasiside */}
+            <p className={`${answered ? "visible" : "hidden"} body-small`}>{correctAnswer ? t("enteredCorrectAnswer") : t("enteredWrongAnswer")}</p> {/* nõue: kohene tagasiside */}
             </div>
         </div>
     )

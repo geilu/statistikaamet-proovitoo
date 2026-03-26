@@ -1,5 +1,5 @@
 export interface Answer {
-    question: string,
-    selected: string,
-    correct: string
+    questionIndex: number,
+    selectedIndex: number,
+    correctIndex: number
 }

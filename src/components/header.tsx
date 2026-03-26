@@ -1,10 +1,14 @@
+import {useTranslation} from "react-i18next";
+
 export default function Header() {
     const aStyle: string = "block hover:bg-white text-white hover:text-black";
+
+    const { t, i18n } = useTranslation();
 
     return (
         <div className="bg-black w-full h-[2.5em] px-[1em] flex flex-row justify-between items-center sm:px-[3.5em] text-white">
             <div id="header-left" className="w-full">
-                <a href="/" className="font-bold">Proovitöö</a>
+                <a href="/" className="font-bold">{t("pageTitle")}</a>
             </div>
 
             <div id="header-center" className="hidden sm:w-full sm:flex sm:flex-row sm:justify-center sm:gap-[2em]">
@@ -50,12 +54,16 @@ export default function Header() {
 
             <div id="header-right" className="w-full flex flex-row justify-end items-center gap-[1.5em]">
                 <a className="font-bold hover:underline text-sm"
-                    href="https://www.stat.ee/et/ligipaasetavus" target="_blank" rel="noopener noreferrer">Ligipääsetavus</a>
+                    href="https://www.stat.ee/et/ligipaasetavus" target="_blank" rel="noopener noreferrer">{t("accessibility")}</a>
 
                 <div className="flex flex-row gap-[0.5em] text-sm font-bold">
-                    <a>EST</a>
-                    <p>|</p>
-                    <a>ENG</a>
+                    <button onClick={() => i18n.changeLanguage("et")}
+                        className={`cursor-pointer
+                            ${i18n.language === "en" ? "text-[#929292]" : "text-white"}`}>EST</button>
+                    <p className="text-[#929292]">|</p>
+                    <button onClick={() => i18n.changeLanguage("en")}
+                        className={`cursor-pointer
+                            ${i18n.language === "en" ? "text-white" : "text-[#929292]"}`}>ENG</button>
                 </div>
             </div>
 

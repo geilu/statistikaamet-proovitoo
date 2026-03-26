@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:5173');
+    await page.click("text=EST"); // force eesti keel testide jaoks
 });
 
 test("entire quiz flow", async ({ page }) => {

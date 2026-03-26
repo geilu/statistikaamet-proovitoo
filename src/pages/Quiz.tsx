@@ -1,10 +1,11 @@
 import Header from "../components/header.tsx";
 import QuestionCard from "../components/questionCard.tsx";
-import {useState} from "react";
 import Navbar from "../components/navbar.tsx";
 import QuizSummary from "../components/quizSummary.tsx";
-import type {Answer} from "../data/answer.ts";
 import Footer from "../components/footer.tsx";
+
+import type {Answer} from "../data/answer.ts";
+import {useState} from "react";
 
 export default function Quiz() {
     const [answers, setAnswers] = useState<Answer[]>([]);

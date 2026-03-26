@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "question": "How does the volume of water behave during freezing?",
+    "options": ["The volume stays the same", "During freezing water expands", "During freezing water shrinks"],
+    "answer": "During freezing water expands"
+  },
+  {
+    "id": 2,
+    "question": "What is the longest recorded lifespan of a horse?",
+    "options": ["62 years", "44 years", "78 years"],
+    "answer": "62 years"
+  },
+  {
+    "id": 3,
+    "question": "Under what name does the punker Villu Tamme write crosswords from?",
+    "options": ["Uno Putukas", "Tammu Ville", "Adolf Mardikas"],
+    "answer": "Adolf Mardikas"
+  }
+]
