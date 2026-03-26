@@ -16,5 +16,11 @@
     "question": "Mis nime alt kirjutab punkar Villu Tamme ristsõnu?",
     "options": ["Uno Putukas", "Tammu Ville", "Adolf Mardikas"],
     "answer": "Adolf Mardikas"
+  },
+  {
+    "id": 4,
+    "question": "Millist kahte numbrit valib inimene suurima tõenäosusega, kui paluda temalt suvalist numbrit?",
+    "options": ["1 ja 5", "4 ja 6", "3 ja 7"],
+    "answer": "3 ja 7"
   }
 ]

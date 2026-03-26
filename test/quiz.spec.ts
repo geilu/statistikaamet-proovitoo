@@ -11,7 +11,8 @@ test("entire quiz flow", async ({ page }) => {
     const answers = [
         "Vesi jäätudes paisub", // oige
         "62 aastat", // oige
-        "Tammu Ville" // vale
+        "Tammu Ville", // vale
+        "3 ja 7" // oige
     ];
 
     for (const answer of answers) {
@@ -21,7 +22,7 @@ test("entire quiz flow", async ({ page }) => {
     }
 
     await expect(page.getByRole("heading", { name: "Kokkuvõte" })).toBeVisible(); // kokkuvõte lõpus
-    await expect(page.getByText("2/3")).toBeVisible(); // lõpptulemus lõpus
+    await expect(page.getByText("3/4")).toBeVisible(); // lõpptulemus lõpus
     await expect(page.getByText(/Õige|Vale/)).not.toHaveCount(0); // tabelis õige/vale olemas
 });
 
@@ -58,23 +59,23 @@ test("can answer a question wrong", async ({ page })  => {
 test("answering question right adds to score", async ({ page }) => {
     await page.click("text=Alusta viktoriiniga");
 
-    await expect(page.getByText("0/3")).toBeVisible();
+    await expect(page.getByText("0/4")).toBeVisible();
 
     await page.getByText("Vesi jäätudes paisub").click();
     await page.click("text=Sisesta");
 
     await expect(page.getByText("Tubli! Valisid õige vastuse.")).toBeVisible();
-    await expect(page.getByText("1/3")).toBeVisible();
+    await expect(page.getByText("1/4")).toBeVisible();
 });
 
 test("answering question wrong doesn't change score", async ({ page }) => {
     await page.click("text=Alusta viktoriiniga");
 
-    await expect(page.getByText("0/3")).toBeVisible();
+    await expect(page.getByText("0/4")).toBeVisible();
 
     await page.getByText("Vesi jäätudes kahaneb").click();
     await page.click("text=Sisesta");
 
     await expect(page.getByText("Kahjuks see pole õige vastus!")).toBeVisible();
-    await expect(page.getByText("0/3")).toBeVisible();
+    await expect(page.getByText("0/4")).toBeVisible();
 })

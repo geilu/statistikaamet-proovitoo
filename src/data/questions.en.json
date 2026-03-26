@@ -16,5 +16,11 @@
     "question": "Under what name does the punker Villu Tamme write crosswords from?",
     "options": ["Uno Putukas", "Tammu Ville", "Adolf Mardikas"],
     "answer": "Adolf Mardikas"
+  },
+  {
+    "id": 4,
+    "question": "Which number is a person most likely to give when asked for a random number?",
+    "options": ["1 and 5", "4 and 6", "3 and 7"],
+    "answer": "3 and 7"
   }
 ]
