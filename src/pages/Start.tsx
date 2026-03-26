@@ -8,16 +8,15 @@ export default function Start() {
         <>
             <Header />
             <Navbar />
-            <div className="m-[2em] flex flex-row">
+            <div className="m-[2em] mt-[4em] flex flex-row">
                 <div>
-                    <h1 className="font-bold text-4xl my-[1em]">Viktoriin</h1>
-                    <p className="text-lg text-[#565656] text-balance my-[1em]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <h1 className="headline-large">Viktoriin</h1>
+                    <p className="body-medium text-balance mt-[1.5em]">
+                        Selles viktoriinis ei ole võimalik küsimuste vahel edasi-tagasi liikuda, seega tasub iga vastus enne kinnitamist hoolikalt läbi mõelda.
+                        Küsimused on erinevate teemade kohta, iga vastuse esitamise järel saate kohese tagasiside, kas vastus on õige või vale.
+                        Viktoriini lõpus on näha põhjalikku kokkuvõtet lõpptulemuse, kõikide küsimuste ja Teie poolt antud vastuste kohta. Toredat vastamist! :)
                     </p>
-                    <a className="btn"
+                    <a className="btn absolute"
                     href="/quiz">Alusta viktoriiniga</a>
                 </div>
                 <div>

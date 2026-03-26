@@ -21,11 +21,12 @@ export default function QuizSummary({ answers, score }: Readonly<{ answers: Answ
 
     return (
         <div className="m-[2em]">
-            <p>valmis! skoor: {score}/{questions.length}</p>
-            <p>kokkuvõte:</p>
-            <SummaryTable answers={answers} />
-            <p>{personalMessage}</p>
-            <a className="btn absolute mt-[1em]" href="/">Tagasi algusesse</a>
+            <h1 className="headline-large">Kokkuvõte</h1>
+            <p className="body-medium my-[1em]">Viktoriin tehtud! Teie lõppskoor on: <b className="text-black">{score}/{questions.length}</b> {/* nõue: lõppskoor */}
+            <br/>{personalMessage}</p> {/* nõue: isikupärastatud sõnum */}
+            <h3 className="headline-medium">Teie vastused:</h3>
+            <SummaryTable answers={answers} /> {/* nõue: tulemuste kokkuvõte tabelina */}
+            <a className="btn absolute" href="/">Tagasi algusesse</a>
         </div>
     )
 }

@@ -1,26 +1,20 @@
 [
   {
     "id": 1,
-    "question": "question",
-    "options": ["option1", "option2", "option3"],
-    "answer": "option1"
+    "question": "Kuidas käitub vee ruumala jäätumisel?",
+    "options": ["Vee ruumala jääb samaks", "Vesi jäätudes paisub", "Vesi jäätudes kahaneb"],
+    "answer": "Vesi jäätudes paisub"
   },
   {
     "id": 2,
-    "question": "another question",
-    "options": ["option1", "option2", "option3"],
-    "answer": "option2"
+    "question": "Mis on tänaseni teadaolev pikim hobuse eluiga?",
+    "options": ["62 aastat", "44 aastat", "78 aastat"],
+    "answer": "62 aastat"
   },
   {
     "id": 3,
-    "question": "third question",
-    "options": ["option1", "option2", "option3"],
-    "answer": "option3"
-  },
-  {
-    "id": 4,
-    "question": "yet another question",
-    "options": ["option1", "option2", "option3", "incredible 4th option"],
-    "answer": "Option3"
+    "question": "Mis nime alt kirjutab punkar Villu Tamme ristsõnu?",
+    "options": ["Uno Putukas", "Tammu Ville", "Adolf Mardikas"],
+    "answer": "Adolf Mardikas"
   }
 ]
