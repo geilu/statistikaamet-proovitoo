@@ -4,6 +4,7 @@
     font-family: 'Roboto', serif;
     --light-pattern: radial-gradient( circle at 1px 1px, #8E8E8E 1px, transparent 0 );
     --dark-pattern: radial-gradient( circle at 1px 1px, black 1px, transparent 0 );
+    --white-pattern: radial-gradient( circle at 1px 1px, #fff 1px, transparent 0 );
     --primary-dark-grey: #565656;
     --primary-color: black;
     --alt-text-color: white;
@@ -15,6 +16,9 @@
 
     --title-2-size: 1.875rem;
     --title-2-line: 2.1875rem;
+
+    --title-3-size: 1.375rem;
+    --title-3-line: 1.75rem;
 
     --medium-text-size: 1.125rem;
     --medium-text-line: 1.5rem;
@@ -32,6 +36,10 @@
     position: absolute;
     background-image: var(--dark-pattern);
     background-size: 2em 2em;
+}
+
+#footer-block {
+    color: var(--alt-text-color);
 }
 
 .btn {
@@ -54,6 +62,18 @@
     font-size: var(--title-1-size);
     line-height: var(--title-1-line);
     font-family: 'Roboto', serif;
+    font-weight: 700;
+}
+.headline-medium {
+    font-size: var(--title-2-size);
+    line-height: var(--title-2-line);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+.headline-small {
+    font-size: var(--title-3-size);
+    line-height: var(--title-3-line);
+    color: var(--primary-color);
     font-weight: 700;
 }
 
@@ -84,11 +104,4 @@
     line-height: var(--small-text-line);
     font-weight: bold;
     color: var(--primary-color);
-}
-
-.headline-medium {
-    font-size: var(--title-2-size);
-    line-height: var(--title-2-line);
-    color: var(--primary-color);
-    font-weight: 700;
 }
