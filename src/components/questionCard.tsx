@@ -73,7 +73,9 @@ export default function QuestionCard({ setAnswers, setScore, setDone, score }: R
                                checked={selected.toLowerCase() === o.toLowerCase()}
                                onChange={() => setSelected(o)}
                                value={o}
-                               className="hidden"/>
+                               className="hidden"
+                                disabled={answered}
+                                />
                                 {/* radio buttoni stiil */}
                                 <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mr-[1em] shrink-0 ${selected.toLowerCase() === o.toLowerCase()
                                     ? "border-black"
