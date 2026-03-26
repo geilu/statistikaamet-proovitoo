@@ -68,6 +68,12 @@
     line-height: var(--medium-text-line);
     color: var(--primary-dark-grey);
 }
+.body-medium-bold {
+    font-size: var(--medium-text-size);
+    line-height: var(--medium-text-line);
+    color: var(--primary-color);
+    font-weight: bold;
+}
 .body-small {
     font-size: var(--small-text-size);
     line-height: var(--small-text-line);

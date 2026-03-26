@@ -16,7 +16,7 @@ export default function Quiz() {
             <Navbar />
             {done
                 ? <QuizSummary answers={answers} score={score} /> /* nõue: lõpus tabel kokkuvõttega */
-                : <QuestionCard setAnswers={setAnswers} setScore={setScore} setDone={setDone} />} {/* nõue: ükshaaval esitatud küsimused */}
+                : <QuestionCard setAnswers={setAnswers} setScore={setScore} setDone={setDone} score={score} />} {/* nõue: ükshaaval esitatud küsimused */}
         </>
     )
 }

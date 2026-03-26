@@ -53,3 +53,27 @@ test("can answer a question wrong", async ({ page })  => {
 
     await expect(page.getByText("Kahjuks see pole õige vastus!")).toBeVisible();
 });
+
+test("answering question right adds to score", async ({ page }) => {
+    await page.click("text=Alusta viktoriiniga");
+
+    await expect(page.getByText("0/3")).toBeVisible();
+
+    await page.getByText("Vesi jäätudes paisub").click();
+    await page.click("text=Sisesta");
+
+    await expect(page.getByText("Tubli! Valisid õige vastuse.")).toBeVisible();
+    await expect(page.getByText("1/3")).toBeVisible();
+});
+
+test("answering question wrong doesn't change score", async ({ page }) => {
+    await page.click("text=Alusta viktoriiniga");
+
+    await expect(page.getByText("0/3")).toBeVisible();
+
+    await page.getByText("Vesi jäätudes kahaneb").click();
+    await page.click("text=Sisesta");
+
+    await expect(page.getByText("Kahjuks see pole õige vastus!")).toBeVisible();
+    await expect(page.getByText("0/3")).toBeVisible();
+})

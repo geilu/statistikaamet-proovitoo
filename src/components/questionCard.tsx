@@ -2,10 +2,11 @@ import questions from '../data/questions.json';
 import {type Dispatch, type SetStateAction, useState} from "react";
 import type {Answer} from "../data/answer.ts";
 
-export default function QuestionCard({ setAnswers, setScore, setDone }: Readonly<{
+export default function QuestionCard({ setAnswers, setScore, setDone, score }: Readonly<{
                                                                                 setAnswers: Dispatch<SetStateAction<Answer[]>>,
                                                                                 setScore: Dispatch<SetStateAction<number>>,
-                                                                                setDone: Dispatch<SetStateAction<boolean>>
+                                                                                setDone: Dispatch<SetStateAction<boolean>>,
+                                                                                score: number
                                                                                 }>) {
 
     const [answered, setAnswered] = useState<boolean>(false);
@@ -57,7 +58,11 @@ export default function QuestionCard({ setAnswers, setScore, setDone }: Readonly
     const continueButton = <button className="btn" onClick={handleContinue}>Liigu edasi</button>
 
     return (
-        <div className="ml-[2em] mt-[2em] sm:m-[5em]">
+        <div className="flex flex-col justify-between ml-[2em] sm:mx-[5em]">
+            <div className="my-[2em]">
+                <p className="mr-[1em] text-right body-medium mt-[0.5em]">Praegune skoor: <b className="body-medium-bold">{score}/{questions.length}</b></p>
+            </div>
+            <div>
             <h1 className="headline-large">{currentQuestion.question}</h1>
             {currentQuestion.options.map(o =>
                 <div key={o} className="my-[1.5em]">
@@ -82,6 +87,7 @@ export default function QuestionCard({ setAnswers, setScore, setDone }: Readonly
             <p className="text-[var(--error-color)] text-sm">{error}</p>
             {answered ? continueButton : enterButton}
             <p className={`${answered ? "visible" : "hidden"} body-small`}>{correctAnswer ? ("Tubli! Valisid õige vastuse.") : ("Kahjuks see pole õige vastus!")}</p> {/* nõue: kohene tagasiside */}
+            </div>
         </div>
     )
 }
