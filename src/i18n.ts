@@ -81,4 +81,8 @@ i18n
                 }
             }
         }
-});
+}, () => {
+        const detected = i18n.language;
+        const normalized = detected.split('-')[0]; // en-US -> en
+        i18n.changeLanguage(normalized);
+    });
