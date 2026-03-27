@@ -74,7 +74,7 @@ export default function QuestionCard({ setAnswers, setScore, setDone, score }: R
                 <p className="mr-[1em] text-right body-medium mt-[0.5em]">{t("currentScore")}: <b className="body-medium-bold">{score}/{questions.length}</b></p>
             </div>
             <div>
-            <h1 className="headline-large">{currentQuestion.question}</h1>
+            <h1 className="headline-large">{index+1}. {currentQuestion.question}</h1>
             {currentQuestion.options.map((o, i) =>
                 <div key={i} className="my-[1.5em]">
                     <label className={`text-(--primary-dark-grey) flex flex-row cursor-pointer ${answered && selected !== i.toString() ? "text-gray-300" : ""}`}>
