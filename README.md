@@ -5,9 +5,6 @@ Proovitöö ülesandeks oli teha interaktiivne viktoriinirakendus.
 ---
 
 ## Käivitamine
-Rakendus on saadaval lingil https://statistikaamet-proovitoo-alpha.vercel.app/.
-
-### Lokaalselt käivitamiseks:
 
 #### 1. Kloonida repo ja liikuda selle kausta
 ```bash
